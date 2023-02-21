@@ -40,7 +40,7 @@ Make sure Scrapy and the ScrapeOps Monitor is installed:
 
 ```
 
-pip install scrapy scrapeops-scrapy
+pip install scrapeops-scrapy
 
 ```
 
