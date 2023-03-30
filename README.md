@@ -36,13 +36,31 @@ To monitor our scraper, this spider uses the [ScrapeOps Monitor](https://scrapeo
 
 ## Installing Required Modules
 
-Making sure the required modules are installed:
+To make sure the required modules are installed into your Python virtual environment.
+From the top level of the project run:
 
 ```
 
 pip install -r requirements.txt
 
 ```
+
+### Troubleshooting
+
+If you have issues running `scrapy crawl` after installing the above, try deactivating your virtual environment and then reactivating it.
+```
+
+deactivate
+
+```
+Followed by 
+
+```
+
+source venv/bin/activate
+
+```
+
 
 
 ## Running The Scrapers
