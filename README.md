@@ -34,15 +34,18 @@ To monitor our scraper, this spider uses the [ScrapeOps Monitor](https://scrapeo
 ![ScrapeOps Dashboard](https://scrapeops.io/assets/images/scrapeops-promo-286a59166d9f41db1c195f619aa36a06.png)
 
 
+## Installing Required Modules
+
+Making sure the required modules are installed:
+
+```
+
+pip install -r requirements.txt
+
+```
+
 
 ## Running The Scrapers
-Make sure Scrapy and the ScrapeOps Monitor is installed:
-
-```
-
-pip install scrapy scrapeops-scrapy
-
-```
 
 To run the Indeed spiders you should first set the Job query parameters you want to search by updating the `keyword_list` and `location_list` lists in the spiders:
 
