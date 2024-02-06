@@ -62,10 +62,13 @@ class IndeedJobSpider(scrapy.Spider):
         keyword = response.meta['keyword'] 
         page = response.meta['page'] 
         position = response.meta['position'] 
+
+        
         script_tag  = re.findall(r"_initialData=(\{.+?\});", response.text)
         if script_tag is not None:
             json_blob = json.loads(script_tag[0])
-            job = json_blob["jobInfoWrapperModel"]["jobInfoModel"]
+            job = json_blob["jobInfoWrapperModel"]["jobInfoModel"]['jobInfoHeaderModel']
+            sanitizedJobDescription= json_blob["jobInfoWrapperModel"]["jobInfoModel"]['sanitizedJobDescription']
             yield {
                 'keyword': keyword,
                 'location': location,
@@ -74,7 +77,7 @@ class IndeedJobSpider(scrapy.Spider):
                 'company': job.get('companyName'),
                 'jobkey': response.meta['jobKey'],
                 'jobTitle': job.get('jobTitle'),
-                'jobDescription': job.get('sanitizedJobDescription').get('content') if job.get('sanitizedJobDescription') is not None else '',
+                'jobDescription': sanitizedJobDescription
             }
 
 
